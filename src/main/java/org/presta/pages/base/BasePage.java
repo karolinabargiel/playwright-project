@@ -16,7 +16,8 @@ public class BasePage {
     Browser browser;
     BrowserContext context;
 
-    public BasePage() {
+    public BasePage(Page page) {
+        this.page = page;
     }
 
     public void click(Locator element) {

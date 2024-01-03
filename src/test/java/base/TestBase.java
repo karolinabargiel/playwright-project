@@ -1,11 +1,10 @@
 package base;
 
-import com.microsoft.playwright.Browser;
-import com.microsoft.playwright.BrowserContext;
-import com.microsoft.playwright.Page;
-import com.microsoft.playwright.Playwright;
+import com.microsoft.playwright.*;
 import org.presta.config.Config;
 import org.testng.annotations.*;
+
+import java.util.List;
 
 
 public class TestBase {
@@ -14,20 +13,19 @@ public class TestBase {
     static Playwright playwright;
     static Browser browser;
     BrowserContext context;
-    Page page;
+    public Page page;
 
     @BeforeSuite
     public void setUpBrowser() {
         playwright = Playwright.create();
-        browser = playwright.chromium().launch();
-        context = browser.newContext();
-        page = context.newPage();
-        page.navigate(config.getApplicationUrl());
+        browser = playwright.chromium().launch(new BrowserType.LaunchOptions()
+                .setHeadless(false)
+                .setArgs(List.of("--start-maximized")));
     }
 
     @BeforeMethod
     public void createContextAndPage() {
-        context = browser.newContext();
+        context = browser.newContext(new Browser.NewContextOptions().setViewportSize(null));
         page = context.newPage();
         page.navigate(config.getApplicationUrl());
     }
