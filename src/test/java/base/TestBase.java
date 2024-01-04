@@ -27,7 +27,7 @@ public class TestBase {
     public void createContextAndPage() {
         context = browser.newContext(new Browser.NewContextOptions().setViewportSize(null));
         page = context.newPage();
-        page.navigate(config.getApplicationUrl());
+        page.navigate(config.getUrl());
     }
 
     @AfterMethod
