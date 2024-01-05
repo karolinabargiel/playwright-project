@@ -6,13 +6,13 @@ import org.presta.pages.base.BasePage;
 
 public class HeaderPage extends BasePage {
 
-    private Locator contactUsBtn = page.getByText("Contact us");
+    private final Locator contactUsBtn = page.locator("#contact-link");
 
     public HeaderPage(Page page) {
         super(page);
     }
 
     public void clickOnContactUs() {
-        contactUsBtn.first().click();
+        contactUsBtn.click();
     }
 }
