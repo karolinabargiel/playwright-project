@@ -10,7 +10,7 @@ import java.util.List;
 @Slf4j
 public class TestBase {
 
-    Config config = new Config();
+    protected Config config = new Config();
     static Playwright playwright;
     static Browser browser;
     BrowserContext context;

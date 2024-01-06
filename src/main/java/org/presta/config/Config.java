@@ -16,6 +16,8 @@ public class Config {
     private final String browserAttachScreenshot;
     private final String headlessMode;
     private final String browserTimeout;
+    private final String userEmail;
+    private final String userPassword;
 
     public Config () {
         properties = getProperties();
@@ -24,6 +26,8 @@ public class Config {
         browserAttachScreenshot = properties.getProperty("browserAttachScreenshot");
         headlessMode = properties.getProperty("headlessMode");
         browserTimeout = properties.getProperty("browserTimeout");
+        userEmail = properties.getProperty("userEmail");
+        userPassword = properties.getProperty("userPassword");
     }
 
     private Properties getProperties() {

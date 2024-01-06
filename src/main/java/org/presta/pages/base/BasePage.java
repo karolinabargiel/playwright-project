@@ -24,6 +24,10 @@ public class BasePage {
         element.click();
     }
 
+    public String getPageTitle(Locator element) {
+        return element.innerText();
+    }
+
     public void inputText(Locator element, String text) {
         element.fill(text);
     }
