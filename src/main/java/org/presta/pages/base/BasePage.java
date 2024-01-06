@@ -13,15 +13,9 @@ import java.util.Random;
 public class BasePage {
 
     public Page page;
-    Browser browser;
-    BrowserContext context;
 
     public BasePage(Page page) {
         this.page = page;
-    }
-
-    public void click(Locator element) {
-        element.click();
     }
 
     public String getPageTitle(Locator element) {
