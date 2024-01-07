@@ -1,8 +1,12 @@
 package org.presta.pages.base;
 
 import com.microsoft.playwright.*;
+import io.qameta.allure.Allure;
+import lombok.extern.slf4j.Slf4j;
 
+import java.io.InputStream;
 import java.math.BigDecimal;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
@@ -10,6 +14,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
+@Slf4j
 public class BasePage {
 
     public Page page;
@@ -46,14 +51,15 @@ public class BasePage {
     public void takeScreenshot() {
         try {
             // Wskazuje ścieżkę do pliku, w którym zostanie zapisany zrzut ekranu
-            String screenshotPath = "src/main/resources/" +
+            String screenshotPath = "src/main/resources/screenshots/" +
                     new SimpleDateFormat("yyyy-MM-dd HH-mm-ss").format(new Date()) + "screenshot.jpg";
             Path path = Paths.get(screenshotPath);
 
             // Zapisuje zrzut ekranu do wskazanego pliku
             page.screenshot(new Page.ScreenshotOptions().setPath(path));
-
-            System.out.println("Zrzut ekranu został zapisany w: " + screenshotPath);
+            InputStream is = Files.newInputStream(path);
+            Allure.addAttachment("Screenshot", is);
+            log.info("Screenshot saved in: " + screenshotPath);
         } catch (Exception e) {
             e.printStackTrace();
         }
