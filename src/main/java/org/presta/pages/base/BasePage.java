@@ -47,21 +47,4 @@ public class BasePage {
             element.fill(text);
         }
     }
-
-    public void takeScreenshot() {
-        try {
-            // Wskazuje ścieżkę do pliku, w którym zostanie zapisany zrzut ekranu
-            String screenshotPath = "src/main/resources/screenshots/" +
-                    new SimpleDateFormat("yyyy-MM-dd HH-mm-ss").format(new Date()) + "screenshot.jpg";
-            Path path = Paths.get(screenshotPath);
-
-            // Zapisuje zrzut ekranu do wskazanego pliku
-            page.screenshot(new Page.ScreenshotOptions().setPath(path));
-            InputStream is = Files.newInputStream(path);
-            Allure.addAttachment("Screenshot", is);
-            log.info("Screenshot saved in: " + screenshotPath);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }

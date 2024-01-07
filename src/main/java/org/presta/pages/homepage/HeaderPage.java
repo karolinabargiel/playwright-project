@@ -19,7 +19,6 @@ public class HeaderPage extends BasePage {
 
     public SignInPage clickOnSignIn() {
         signInBtn.click();
-        takeScreenshot();
         return new SignInPage(page);
     }
 }

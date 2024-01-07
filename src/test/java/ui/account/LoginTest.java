@@ -1,4 +1,4 @@
-package ui;
+package ui.account;
 
 import base.Pages;
 import dataProvider.DataProviderUi;
