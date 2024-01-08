@@ -7,13 +7,11 @@ import org.presta.pages.base.BasePage;
 
 @Slf4j
 public class MyAccountPage extends BasePage {
-
-    private final Locator pageTitle = page.locator(".page-header");
     public MyAccountPage(Page page) {
         super(page);
     }
 
-    public String getTitle() {
-        return getPageTitle(pageTitle);
-    }
+//    public String getTitle() {
+//        return page.title();
+//    }
 }

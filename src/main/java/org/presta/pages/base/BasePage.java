@@ -1,16 +1,9 @@
 package org.presta.pages.base;
 
 import com.microsoft.playwright.*;
-import io.qameta.allure.Allure;
 import lombok.extern.slf4j.Slf4j;
 
-import java.io.InputStream;
 import java.math.BigDecimal;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -23,8 +16,8 @@ public class BasePage {
         this.page = page;
     }
 
-    public String getPageTitle(Locator element) {
-        return element.innerText();
+    public String getPageTitle() {
+        return page.title();
     }
 
     public void inputText(Locator element, String text) {
