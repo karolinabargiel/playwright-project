@@ -18,10 +18,6 @@ public class ProductsListPage extends BasePage {
         return productsNames.allInnerTexts();
     }
 
-    public String getFirstProductTitle() {
-        return productsNames.first().innerText();
-    }
-
     public ProductDetailPage clickOnProductOnPlp() {
         productsNames.first().click();
         return new ProductDetailPage(page);
