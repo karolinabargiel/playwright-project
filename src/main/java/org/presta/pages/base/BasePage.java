@@ -24,7 +24,7 @@ public class BasePage {
         element.fill(text);
     }
 
-    public ElementHandle getRandomElement(List<ElementHandle> elements) {
+    public String getRandomElement(List<String> elements) {
         return elements.get(new Random().nextInt(elements.size()));
     }
 
