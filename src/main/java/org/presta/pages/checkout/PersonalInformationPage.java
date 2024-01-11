@@ -10,10 +10,10 @@ public class PersonalInformationPage extends BasePage {
 
     private final Locator firstNameInput = page.locator("input[name='firstname']");
     private final Locator lastNameInput = page.locator("input[name='lastname']");
-    private final Locator emailInput = page.locator("input[name='email']");
+    private final Locator emailInput = page.locator("input[name='email']").first();
     private final Locator privacyCheckbox = page.locator("input[name='customer_privacy']");
     private final Locator gdprCheckbox = page.locator("input[name='psgdpr']");
-    private final Locator continueBtn = page.locator("button[name='continue']");
+    private final Locator continueBtn = page.locator("button[name='continue']").first();
 
     public PersonalInformationPage(Page page) {
         super(page);
