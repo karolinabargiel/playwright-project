@@ -21,7 +21,7 @@ public class UserFactory {
                 .build();
     }
 
-    public static User getAlreadyRegisteredUser() {
+    public User getAlreadyRegisteredUser() {
         return new User.UserBuilder()
                 .firstName(config.getUserFirstName())
                 .lastName(config.getUserLastName())

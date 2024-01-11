@@ -11,7 +11,9 @@ public class PurchaseProductTest extends Pages {
                 .clickOnProductOnPlp()
                 .clickAddToCart()
                 .clickProceedToCheckout()
-                .clickProceedToCheckoutInCart();
+                .clickProceedToCheckoutInCart()
+                .fillPersonalInfoForm()
+                .clickContinueButton();
 
     }
 }
