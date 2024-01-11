@@ -18,6 +18,8 @@ public class Config {
     private final String browserTimeout;
     private final String userEmail;
     private final String userPassword;
+    private final String userFirstName;
+    private final String userLastName;
 
     public Config () {
         properties = getProperties();
@@ -28,6 +30,8 @@ public class Config {
         browserTimeout = properties.getProperty("browserTimeout");
         userEmail = properties.getProperty("userEmail");
         userPassword = properties.getProperty("userPassword");
+        userFirstName = properties.getProperty("userFirstName");
+        userLastName = properties.getProperty("userLastName");
     }
 
     private Properties getProperties() {

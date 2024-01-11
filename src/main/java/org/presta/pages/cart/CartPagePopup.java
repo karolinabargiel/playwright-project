@@ -8,6 +8,7 @@ public class CartPagePopup extends BasePage {
 
     private final Locator productName = page.locator(".product-name");
     private final Locator modalLabel = page.locator("#myModalLabel");
+    private final Locator proceedToCheckoutBtn = page.getByText("Proceed to checkout");
 
     public CartPagePopup(Page page) {
         super(page);
@@ -24,5 +25,10 @@ public class CartPagePopup extends BasePage {
 
     public String getModalTitle() {
         return modalLabel.innerText();
+    }
+
+    public CartPage clickProceedToCheckout() {
+        proceedToCheckoutBtn.click();
+        return new CartPage(page);
     }
 }

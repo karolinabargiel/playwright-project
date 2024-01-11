@@ -2,9 +2,11 @@ package org.presta.models;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.Setter;
 
 @Data
 @Builder
+@Setter
 public class User {
 
     private String firstName;
