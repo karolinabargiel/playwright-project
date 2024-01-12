@@ -40,7 +40,7 @@ public class TestBase {
         log.info("Playwright is up and running");
     }
 
-    @AfterMethod (alwaysRun = true)
+    @AfterMethod
     public void closeContext(ITestResult testResult) {
         if (testResult.getStatus() == ITestResult.FAILURE) {
             takeScreenshot(testResult.getMethod().getMethodName());
