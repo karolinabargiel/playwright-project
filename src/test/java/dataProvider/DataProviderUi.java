@@ -24,4 +24,11 @@ public class DataProviderUi {
                 {"TesterSii"}
         };
     }
+
+    @DataProvider(name = "purchaseTest")
+    public static Object[][] purchaseTest() {
+        return new Object [][] {
+                {"test", "11111"}
+        };
+    }
 }
