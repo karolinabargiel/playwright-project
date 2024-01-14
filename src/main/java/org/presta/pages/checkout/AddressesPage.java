@@ -10,7 +10,7 @@ public class AddressesPage extends BasePage {
     private final Locator cityInput = page.locator("input[name='city']");
     private final Locator stateDropdown = page.locator("select[name='id_state']");
     private final Locator postalCodeInput = page.locator("input[name='postcode']");
-    private final Locator continueBtn = page.locator("button[name='continue']").first();
+    private final Locator continueBtn = page.locator("button[name='confirm-addresses']");
 
     public AddressesPage(Page page) {
         super(page);

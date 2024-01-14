@@ -6,17 +6,17 @@ import org.testng.annotations.Test;
 
 public class PurchaseProductTest extends Pages {
 
-    @Test (dataProvider = "purchaseTest", dataProviderClass = DataProviderUi.class)
-    public void shouldPurchaseRandomProduct(String text, String postCode) {
-        productsListPage
+    @Test
+    public void shouldPurchaseRandomProduct() {
+        headerPage.clickOnSignIn()
+                .signIn(config.getUserEmail(), config.getUserPassword())
+                .clickHomeBtn()
                 .clickOnProductOnPlp()
                 .clickAddToCart()
                 .clickProceedToCheckout()
                 .clickProceedToCheckoutInCart()
-                .fillPersonalInfoForm()
-                .clickContinueButton()
-                .fillAddress(text, postCode)
-                .chooseState()
-                .clickContinueBtn();
+                .clickContinueBtn()
+                .clickContinueBtn()
+                .checkMandatoryOptions();
     }
 }

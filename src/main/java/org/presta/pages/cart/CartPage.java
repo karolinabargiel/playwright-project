@@ -3,6 +3,7 @@ package org.presta.pages.cart;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import org.presta.pages.base.BasePage;
+import org.presta.pages.checkout.AddressesPage;
 import org.presta.pages.checkout.PersonalInformationPage;
 
 public class CartPage extends BasePage {
@@ -13,8 +14,8 @@ public class CartPage extends BasePage {
         super(page);
     }
 
-    public PersonalInformationPage clickProceedToCheckoutInCart() {
+    public AddressesPage clickProceedToCheckoutInCart() {
         proceedToCheckoutBtn.click();
-        return new PersonalInformationPage(page);
+        return new AddressesPage(page);
     }
 }
