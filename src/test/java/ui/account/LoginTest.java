@@ -12,7 +12,7 @@ public class LoginTest extends Pages {
     @Test (dataProvider = "loginTest", dataProviderClass = DataProviderUi.class)
     public void shouldLoginUser(String pageTitle) {
         Assertions.assertThat(headerPage.clickOnSignIn()
-                .signIn(config.getUserEmail(), config.getUserPassword()).getPageTitle())
+                .signIn(config.getUserEmail(), System.getProperty("decrypted.password")).getPageTitle())
                 .as("Your account page should be displayed")
                 .isEqualTo(pageTitle);
     }
