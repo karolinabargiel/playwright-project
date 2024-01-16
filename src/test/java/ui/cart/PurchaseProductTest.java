@@ -9,7 +9,7 @@ public class PurchaseProductTest extends Pages {
     @Test
     public void shouldPurchaseRandomProduct() {
         headerPage.clickOnSignIn()
-                .signIn(config.getUserEmail(), config.getUserPassword())
+                .signIn(config.getUserEmail(), System.getProperty("decrypted.password"))
                 .clickHomeBtn()
                 .clickOnProductOnPlp()
                 .clickAddToCart()

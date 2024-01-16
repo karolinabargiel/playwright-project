@@ -4,6 +4,7 @@ import com.microsoft.playwright.*;
 import io.qameta.allure.Allure;
 import lombok.extern.slf4j.Slf4j;
 import org.presta.config.Config;
+import org.presta.config.EncryptionHelper;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
@@ -30,6 +31,11 @@ public class TestBase {
         browser = playwright.chromium().launch(new BrowserType.LaunchOptions()
                 .setHeadless(false)
                 .setArgs(List.of("--start-maximized")));
+    }
+
+    @BeforeSuite
+    public void decryptPassword() {
+        EncryptionHelper.decryptPassword(config.getUserPassword());
     }
 
     @BeforeMethod
