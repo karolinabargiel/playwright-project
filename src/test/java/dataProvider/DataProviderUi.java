@@ -28,7 +28,7 @@ public class DataProviderUi {
     @DataProvider(name = "purchaseTest")
     public static Object[][] purchaseTest() {
         return new Object [][] {
-                {"test", "11111"}
+                {"Order confirmation"}
         };
     }
 }

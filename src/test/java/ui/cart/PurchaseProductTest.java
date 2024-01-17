@@ -4,10 +4,12 @@ import base.Pages;
 import dataProvider.DataProviderUi;
 import org.testng.annotations.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 public class PurchaseProductTest extends Pages {
 
-    @Test
-    public void shouldPurchaseRandomProduct() {
+    @Test (dataProvider = "purchaseTest", dataProviderClass = DataProviderUi.class)
+    public void shouldPurchaseRandomProduct(String pageTitle) {
         headerPage.clickOnSignIn()
                 .signIn(config.getUserEmail(), System.getProperty("decrypted.password"))
                 .clickHomeBtn()
@@ -17,6 +19,8 @@ public class PurchaseProductTest extends Pages {
                 .clickProceedToCheckoutInCart()
                 .clickContinueBtn()
                 .clickContinueBtn()
-                .checkMandatoryOptions();
+                .checkMandatoryOptions()
+                .clickPlaceOrder();
+        assertThat(orderConfirmationPage.getPageTitle()).isEqualTo(pageTitle);
     }
 }
