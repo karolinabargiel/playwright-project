@@ -11,6 +11,7 @@ import org.presta.pages.homepage.products.ProductsListPage;
 public class MyAccountPage extends BasePage {
 
     private final Locator homeBtn = page.locator("//img[@class='logo img-responsive']");
+    private final Locator orderHistoryBtn = page.getByText(" Order history and details ");
 
     public MyAccountPage(Page page) {
         super(page);
@@ -19,5 +20,10 @@ public class MyAccountPage extends BasePage {
     public ProductsListPage clickHomeBtn() {
         homeBtn.click();
         return new ProductsListPage(page);
+    }
+
+    public OrderHistoryPage clickOrderHistory() {
+        orderHistoryBtn.click();
+        return new OrderHistoryPage(page);
     }
 }
