@@ -16,5 +16,6 @@ public class OrderHistoryTest extends Pages {
                 .clickOrderHistory()
                 .getListOfOrders();
         assertThat(listOfOrders).isNotEmpty();
+        assertThat(listOfOrders).contains("AKGBVQJEL");
     }
 }
