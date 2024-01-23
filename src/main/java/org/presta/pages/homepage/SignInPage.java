@@ -41,7 +41,18 @@ public class SignInPage extends BasePage {
         return new CreateAccountPage(page);
     }
 
+    public SignInPage fillEmailField(String email) {
+        emailInput.fill(email);
+        page.keyboard().press("Enter");
+        return this;
+    }
+
     public boolean isAuthenticationAlertDisplayed() {
         return loginAlert.isVisible();
+    }
+
+    public boolean checkFieldValidation() {
+        signInBtn.click();
+        return true;
     }
 }

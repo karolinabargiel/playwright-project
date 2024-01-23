@@ -18,6 +18,13 @@ public class DataProviderUi {
         };
     }
 
+    @DataProvider(name = "validationLoginTest")
+    public static Object[][] validationLoginTest() {
+        return new Object [][] {
+                {"randomtest.com", "Login"}
+        };
+    }
+
     @DataProvider(name = "registerTest")
     public static Object[][] registerTest() {
         return new Object [][] {
