@@ -2,7 +2,6 @@ package ui.account;
 
 import base.Pages;
 import dataProvider.DataProviderUi;
-import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
 
 import static io.qameta.allure.Allure.step;
@@ -30,7 +29,7 @@ public class LoginTest extends Pages {
     public void shouldCheckEmailFieldValidation(String email, String pageTitle) {
         step("Go to Sign in and provide not valid email");
         headerPage.clickOnSignIn()
-                .fillEmailField(email);
-        assertThat(headerPage.getPageTitle()).isEqualTo(pageTitle);
+                .signInWithFailure(email, System.getProperty("decrypted.password"));
+        assertThat(signInPage.getPageTitle()).isEqualTo(pageTitle);
     }
 }

@@ -21,7 +21,10 @@ public class DataProviderUi {
     @DataProvider(name = "validationLoginTest")
     public static Object[][] validationLoginTest() {
         return new Object [][] {
-                {"randomtest.com", "Login"}
+                {"randomtest.com", "Login"},
+                {"random@com", "Login"},
+                {"random@.com", "Login"},
+                {"randomtest@", "Login"}
         };
     }
 
