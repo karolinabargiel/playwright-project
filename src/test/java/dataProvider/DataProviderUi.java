@@ -28,6 +28,16 @@ public class DataProviderUi {
         };
     }
 
+    @DataProvider(name = "validationPasswordTest")
+    public static Object[][] validationPasswordTest() {
+        return new Object [][] {
+                {" "},
+                {"1"},
+                {"#2"},
+                {"wex"}
+        };
+    }
+
     @DataProvider(name = "registerTest")
     public static Object[][] registerTest() {
         return new Object [][] {

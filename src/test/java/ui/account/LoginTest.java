@@ -32,4 +32,12 @@ public class LoginTest extends Pages {
                 .signInWithFailure(email, System.getProperty("decrypted.password"));
         assertThat(signInPage.getPageTitle()).isEqualTo(pageTitle);
     }
+
+    @Test (dataProvider = "validationPasswordTest", dataProviderClass = DataProviderUi.class)
+    public void shouldCheckPasswordFieldValidation(String password) {
+        step("Go to Sign in and provide not valid password");
+        headerPage.clickOnSignIn()
+                .signInWithFailure(config.getUserEmail(), password);
+        assertThat(signInPage.getPageTitle()).isEqualTo("Login");
+    }
 }
