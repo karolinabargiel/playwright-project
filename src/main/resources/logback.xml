@@ -9,23 +9,23 @@
             </pattern>
         </encoder>
     </appender>
-    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <!--        <file>${DEV_HOME}/mojPlikBezNazwy.log</file>&ndash;&gt;-->
-        <file>${DEV_HOME}/timeBasedlogFile_${bySecond}.log
-        </file>
-        <!-- z timestamp-->
-        <!--        <file>${DEV_HOME}/timeBasedlogFile.log</file>-->
-        <!--        <append>true</append>-->
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <!-- daily rollover -->
-            <fileNamePattern>${DEV_HOME}/timeBasedlogFile.%d{yyyy-MM-dd-HH-mm}.zip</fileNamePattern>
-            <maxHistory>3</maxHistory>
-            <totalSizeCap>30KB</totalSizeCap>
-        </rollingPolicy>
-        <encoder>
-            <pattern> %method{0} %relative [%thread] %-5level %logger{35} - %msg%n</pattern>
-        </encoder>
-    </appender>
+<!--    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+<!--        &lt;!&ndash;        <file>${DEV_HOME}/mojPlikBezNazwy.log</file>&ndash;&gt;&ndash;&gt;-->
+<!--        <file>${DEV_HOME}/timeBasedlogFile_${bySecond}.log-->
+<!--        </file>-->
+<!--        &lt;!&ndash; z timestamp&ndash;&gt;-->
+<!--        &lt;!&ndash;        <file>${DEV_HOME}/timeBasedlogFile.log</file>&ndash;&gt;-->
+<!--        &lt;!&ndash;        <append>true</append>&ndash;&gt;-->
+<!--        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+<!--            &lt;!&ndash; daily rollover &ndash;&gt;-->
+<!--            <fileNamePattern>${DEV_HOME}/timeBasedlogFile.%d{yyyy-MM-dd-HH-mm}.zip</fileNamePattern>-->
+<!--            <maxHistory>3</maxHistory>-->
+<!--            <totalSizeCap>30KB</totalSizeCap>-->
+<!--        </rollingPolicy>-->
+<!--        <encoder>-->
+<!--            <pattern> %method{0} %relative [%thread] %-5level %logger{35} - %msg%n</pattern>-->
+<!--        </encoder>-->
+<!--    </appender>-->
     <logger name="com.sii.tests" additivity="false">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="FILE"/>
