@@ -3,6 +3,7 @@ package base;
 import org.presta.pages.account.MyAccountPage;
 import org.presta.pages.cart.CartPagePopup;
 import org.presta.pages.checkout.OrderConfirmationPage;
+import org.presta.pages.homepage.FooterPage;
 import org.presta.pages.homepage.HeaderPage;
 import org.presta.pages.homepage.SignInPage;
 import org.presta.pages.homepage.products.ProductsListPage;
@@ -15,6 +16,7 @@ public class Pages extends TestBase {
     public ProductsListPage productsListPage;
     public CartPagePopup cartPagePopup;
     public OrderConfirmationPage orderConfirmationPage;
+    public FooterPage footerPage;
 
     @BeforeMethod
     public void initializePages() {
@@ -24,5 +26,6 @@ public class Pages extends TestBase {
         productsListPage = new ProductsListPage(page);
         cartPagePopup = new CartPagePopup(page);
         orderConfirmationPage = new OrderConfirmationPage(page);
+        footerPage = new FooterPage(page);
     }
 }
