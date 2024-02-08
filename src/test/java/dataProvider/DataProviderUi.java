@@ -1,8 +1,11 @@
 package dataProvider;
 
+import org.presta.enums.MenuOptions;
 import org.testng.annotations.DataProvider;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class DataProviderUi {
 
@@ -71,6 +74,17 @@ public class DataProviderUi {
                 {2, ourCompanySection},
                 {3, yourAccountSection},
                 {4, storeInfoSection}
+        };
+    }
+
+    @DataProvider(name = "mainMenuTest")
+    public static Object[][] mainMenuTest() {
+        Map<MenuOptions, String> testData = new HashMap<>();
+        testData.put(MenuOptions.CLOTHES, "Clothes");
+        testData.put(MenuOptions.ACCESSORIES, "Accessories");
+        testData.put(MenuOptions.ART, "Art");
+        return new Object [][] {
+                {testData}
         };
     }
 }
